@@ -27,14 +27,14 @@ namespace RegexAsd
         private void btnSave_Click(object sender, EventArgs e)
         {
             {
-                if (!Regex.IsMatch(txtName.Text, @"^([A-Za-z]*\s*)*$"))
+                if (!Regex.IsMatch(nameLabel.Text, @"^([A-Za-z]*\s*)*$"))
                     MessageBox.Show("The name is invalid (only alphabetical characters are allowed)");
-                if (!Regex.IsMatch(txtPhone.Text, @"^((\(\d{3}\)?)|(\d{3}-))?\d{3}-\d{4}$"))
+                if (!Regex.IsMatch(phoneLabel.Text, @"^((\(\d{3}\)?)|(\d{3}-))?\d{3}-\d{4}$"))
                     MessageBox.Show("The phone number is not a valid US phone number");
-                if (!Regex.IsMatch(txtEmail.Text, @"^([a-zA-Z0-9_\-” [email protected]\.]+)@((\[[0-9]{1,3}" + @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" + @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
+                if (!Regex.IsMatch(emailLabel.Text, @"^([a-zA-Z0-9_\-” [email protected]\.]+)@((\[[0-9]{1,3}" + @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" + @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
                     MessageBox.Show("The e-mail address is not valid.");
             }
-            txtPhone.Text = ReformatPhone(txtPhone.Text);
+            txtPhone.Text = ReformatPhone(phoneLabel.Text);
         }
 
         static string ReformatPhone(string s)
